@@ -3,7 +3,7 @@ class Solution:
         if not s:
             return False
         s = s.lower()
-        s = ''.join(ch for ch in s if ch.isalnum())
+        s = ''.join(ch.lower() for ch in s if ch.isalnum())
         s = s.replace(" ", "")
     
         return s == s[::-1]
