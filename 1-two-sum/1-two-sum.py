@@ -1,11 +1,8 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        # Brut force solution with N squred
-
         for i in range(len(nums)):
-            for j in range(len(nums)):
-                if j == i:
-                    continue
-                if (nums[j] + nums[i]) == target:
-                    return [i, j]
+            if (target-nums[i]) in nums and nums.index(target-nums[i]) != i:
+                j = nums.index(target-nums[i])
+                return [i, j]
+            
         return []
